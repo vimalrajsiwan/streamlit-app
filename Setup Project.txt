@@ -1,0 +1,71 @@
+for this project -- python 3.10.0v
+1 STEP 1 Create Python virtual environment:
+py -m venv interview_env
+
+2 STEP 2 — Create folder .vscode in your project
+
+Inside your project:
+
+your-project/
+   ├── interview_env/
+   └── .vscode/
+         └── settings.json
+
+         {
+  "terminal.integrated.defaultProfile.windows": "Command Prompt",
+  "terminal.integrated.profiles.windows": {
+    "Command Prompt": {
+      "path": "C:\\Windows\\System32\\cmd.exe",
+      "args": []
+    }
+  },
+  "python.defaultInterpreterPath": "${workspaceFolder}\\interview_env\\Scripts\\python.exe",
+  "python.terminal.activateEnvironment": true
+}
+
+
+Restart VS code -- it will run project in Command Prompt not in PowerSell
+
+
+Optional
+ To Select bdefault 
+ Ctrl + Shift + P
+
+ Python => Select Interpreter =>  choose => interview_env
+
+
+Once activated, you’ll see (interview_env) appear before your command line prompt.
+
+1 Dependency to install
+
+pip install streamlit
+pip install openai
+pip install streamlit-js-eval
+or
+
+pip install openai==2.14.0
+pip install streamlit==1.52.2
+pip install streamlit-js-eval==0.1.7
+
+
+pip install langchain==1.0.2 langgraph==1.0.5 langchain-openai==1.0.1 openai==2.6.1 pinecone==8.0.0 datasets==4.4.2 langgraph-checkpoint-sqlite==3.0.1 python-dotenv==1.1.1 grandalf==0.8 ipython==8.37.0
+
+
+// Bellow is option for Jupyter notebooks
+2 We’ll also add Jupyter support so you can run notebooks with this environment:
+
+pip install ipykernel jupyterlab notebook
+
+python -m ipykernel install --user --name=interview_env
+
+When you open Jupyter Notebook or Lab, make sure the kernel is set to llms_course_env.
+
+3  Command to check installed library versions
+
+pip freeze | findstr /i "streamlit openai streamlit-js-eval"
+
+
+
+
+4 To Run the app
+  in cmd => streamlit run app.py
