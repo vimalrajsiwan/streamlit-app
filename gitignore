@@ -1,0 +1,17 @@
+# Virtual environment
+
+interview_env/
+.env
+
+# Python cache
+
+**pycache**/
+\*.pyc
+
+# Streamlit
+
+.streamlit/
+
+# Logs
+
+\*.log
