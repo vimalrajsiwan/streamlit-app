@@ -154,7 +154,7 @@ if st.session_state.feedback_shown:
         [ f"""{m["role"]} {m["content"]}""" for m in st.session_state.messages]
     )
 
-    # Initialize new OpenAI client instance for feedback
+    # Initialize new OpenAI client instance for feedback --updated
     feedback_client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
     # Generate feedback using the stored messages and write a system prompt for the feedback
