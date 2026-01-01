@@ -134,7 +134,8 @@ if st.session_state.setup_complete and not st.session_state.chat_complete and no
                             { "role": m["role"], "content": m["content"] } for m in st.session_state.messages
                         ],
                         max_tokens= 1000,
-                        stream= True
+                        stream= True,
+                        temperature= 0.3
                     )
 
                     response = st.write_stream(stream)
@@ -160,6 +161,7 @@ if st.session_state.feedback_shown:
     # Generate feedback using the stored messages and write a system prompt for the feedback
     feedback_completion = feedback_client.chat.completions.create(
         model="gpt-4o",
+        temperature= 0.3,
         messages=[
             {"role": "system", "content": """You are a helpful tool that provides feedback on an interviewee performance.
              Before the Feedback give a score of 1 to 10.
